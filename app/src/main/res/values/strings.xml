@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ProyectoFumar</string>
+    <string name="nicotina_item">Nicotina</string>
+    <string name="menu_item">Menu</string>
+    <string name="nicotina_description">¿Sabías vos que la nicotina que tiene el cigarrillo es una droga que afecta los neuroreceptores cerebrales que controlan la ansiedad y que por eso produce mucha dependencias?</string>
+    <string name="nicotina_description2">Objetivo 1: Aprender que es y como actúa la nicotina.</string>
+    <string name="menu_description">Aplicación móvil de seguimiento para provocar el abandono del tabaco.</string>
+</resources>
