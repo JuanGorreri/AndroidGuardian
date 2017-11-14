@@ -1,7 +1,5 @@
 package com.sergioviera.proyectofumar;
 
-import android.content.Intent;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -15,26 +13,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.auth.api.signin.GoogleSignInResult;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.OptionalPendingResult;
-import com.google.android.gms.common.api.ResultCallback;
-import com.google.android.gms.common.api.Status;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import static android.R.attr.button;
-import static android.R.attr.color;
-import static com.sergioviera.proyectofumar.R.color.colorGreen;
-import static com.sergioviera.proyectofumar.R.color.colorRed;
-
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,8 +22,6 @@ public class MainActivity extends AppCompatActivity {
     private Button accionBTN;
 
     String url;
-
-    DatabaseReference ref = FirebaseDatabase.getInstance().getReference().getRoot();
 
 
     @Override
@@ -59,13 +35,6 @@ public class MainActivity extends AppCompatActivity {
         descripcionTV2 = (TextView) findViewById(R.id.descripcionTV2);
         accionBTN = (Button) findViewById(R.id.accionBTN);
         imagenIV = (ImageView) findViewById(R.id.imagenIV);
-
-        accionBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), accionBTN.getText(), Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     @Override
@@ -86,6 +55,12 @@ public class MainActivity extends AppCompatActivity {
             url = "https://i.blogs.es/25dcbc/tabaco/400_300.jpg";
             accionBTN.setText("Objetivo 1");
             LoadImage();
+
+            accionBTN.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                }
+            });
         }
 
         if (id == R.id.menuitem) {
@@ -107,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
 
         setTitle("Bienvenido");
         descripcionTV.setText(R.string.menu_description);
+        descripcionTV2.setText("");
         url = "http://enlinea.santotomas.cl/wp-content/uploads/sites/2/2016/05/dia-no-fumar-744x465.jpg";
         accionBTN.setText("Deseo de fumar");
         LoadImage();
